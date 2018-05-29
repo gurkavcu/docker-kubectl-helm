@@ -1,8 +1,14 @@
 version: '3.5'
 services: 
-  kubectl-helm:
+  kubectl-helm-v2-8-2:
+    build:
+      context: v2-8-2/.
+      network: host
+    image: kubectl-helm:2.8.2
+    command: ls -la /usr/local/bin
+  kubectl-helm-v2-9-1:
     build:
       context: v2-9-1/.
       network: host
     image: kubectl-helm:2.9.1
-    command: ls -la /usr/local/bin  
+    command: ls -la /usr/local/bin        

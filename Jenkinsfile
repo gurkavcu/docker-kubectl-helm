@@ -22,8 +22,10 @@ podTemplate(label: 'kubectl-builder',
                     withDockerRegistry([credentialsId: 'ecr:eu-central-1:aws-cred', url: "https://${DOCKER_IMAGE_REPO}"]) {
                         sh """
                            docker-compose up --build
+                           docker tag kubectl-helm:2.8.2 ${DOCKER_IMAGE_REPO}:2.8.2
                            docker tag kubectl-helm:2.9.1 ${DOCKER_IMAGE_REPO}:2.9.1                           
                            docker tag kubectl-helm:2.9.1 ${DOCKER_IMAGE_REPO}:latest
+                           docker push ${DOCKER_IMAGE_REPO}:2.8.2  
                            docker push ${DOCKER_IMAGE_REPO}:2.9.1                           
                            docker push ${DOCKER_IMAGE_REPO}:latest                           
                            """ 
