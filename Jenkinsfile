@@ -23,10 +23,10 @@ podTemplate(label: 'kubectl-builder',
                         sh """
                            docker-compose up --build
                            docker tag kubectl-helm:2.8.2 ${DOCKER_IMAGE_REPO}:2.8.2
-                           docker tag kubectl-helm:2.9.1 ${DOCKER_IMAGE_REPO}:2.9.1                           
-                           docker tag kubectl-helm:2.9.1 ${DOCKER_IMAGE_REPO}:latest
+                           docker tag kubectl-helm:2.9.0 ${DOCKER_IMAGE_REPO}:2.9.0                           
+                           docker tag kubectl-helm:2.9.0 ${DOCKER_IMAGE_REPO}:latest
                            docker push ${DOCKER_IMAGE_REPO}:2.8.2  
-                           docker push ${DOCKER_IMAGE_REPO}:2.9.1                           
+                           docker push ${DOCKER_IMAGE_REPO}:2.9.0                           
                            docker push ${DOCKER_IMAGE_REPO}:latest                           
                            """ 
                     }
