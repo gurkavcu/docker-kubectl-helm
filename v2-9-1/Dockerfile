@@ -1,3 +1,5 @@
+FROM alpine
+
 ENV KUBE_LATEST_VERSION="v1.10.2"
 # Note: Latest version of helm may be found at:
 # https://github.com/kubernetes/helm/releases
