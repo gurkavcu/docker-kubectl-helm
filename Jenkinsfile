@@ -16,7 +16,7 @@ podTemplate(label: 'kubectl-builder',
                 def GIT_COMMIT = sh(returnStdout: true, script: 'git rev-parse HEAD').trim()
                 container('docker') {
                     def SERVICE_NAME = "kubectl-helm"
-                    def DOCKER_IMAGE_REPO = "055140357741.dkr.ecr.eu-central-1.amazonaws.com/kubectl-helm"
+                    def DOCKER_IMAGE_REPO = "055140357741.dkr.ecr.eu-east-1.amazonaws.com/kubectl-helm"
 
 
                     withDockerRegistry([credentialsId: 'ecr:eu-east-1:aws-cred', url: "https://${DOCKER_IMAGE_REPO}"]) {
